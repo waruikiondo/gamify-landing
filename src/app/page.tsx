@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Gamepad2, TrendingUp, Target, ShieldCheck, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Gamepad2, TrendingUp, Target, ShieldCheck, ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
 
 export default function LandingPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -12,115 +12,131 @@ export default function LandingPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[var(--color-background)] text-white font-sans selection:bg-[var(--color-primary)] selection:text-white pb-20">
+    <div className="min-h-screen bg-[var(--color-background)] text-white font-sans selection:bg-[var(--color-primary)] selection:text-white pb-20 relative overflow-hidden">
       
-      {/* Navbar */}
-      <nav className="fixed top-0 w-full border-b border-[var(--color-borderDark)] bg-[var(--color-background)]/80 backdrop-blur-md z-50">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Gamepad2 className="text-[var(--color-primary)] w-8 h-8" />
-            <span className="text-2xl font-black tracking-wider">GAMIFY</span>
-          </div>
-          <button className="px-6 py-2 rounded-xl bg-[var(--color-surface)] border border-[var(--color-borderDark)] hover:border-[var(--color-primary)] transition-colors text-sm font-bold shadow-sm">
+      {/* Background Ambient Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[var(--color-primary)]/20 blur-[120px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#b873ff]/10 blur-[150px] rounded-full pointer-events-none -z-10" />
+
+      {/* Floating Pill Navbar (Framer Style) */}
+      <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-4xl border border-white/10 bg-black/40 backdrop-blur-xl z-50 rounded-full px-2 py-2 flex items-center justify-between shadow-2xl">
+        <div className="flex items-center gap-2 pl-4">
+          <Gamepad2 className="text-[var(--color-primary)] w-6 h-6" />
+          <span className="text-xl font-bold tracking-tight">GAMIFY</span>
+        </div>
+        <div className="flex items-center gap-4">
+          <button className="hidden sm:block text-sm font-medium text-gray-300 hover:text-white transition-colors">
+            Features
+          </button>
+          <button className="hidden sm:block text-sm font-medium text-gray-300 hover:text-white transition-colors">
+            Methodology
+          </button>
+          <button className="px-6 py-2.5 rounded-full bg-white text-black hover:bg-gray-200 transition-colors text-sm font-bold shadow-sm">
             Sign In
           </button>
         </div>
       </nav>
 
-      {/* Hero Section - BULLETPROOF (No Framer Motion) */}
-      <section className="pt-32 pb-20 px-6 max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mt-10">
-          
-          {/* Left Text Content */}
-          <div className="flex-1 text-center lg:text-left">
-            <div className="inline-block mb-6 px-4 py-1.5 rounded-full bg-[var(--color-surface)] border border-[var(--color-primary)]/30 text-[var(--color-primary)] text-xs font-bold tracking-widest uppercase shadow-[var(--shadow-neon)]">
-              The Future of Certification Prep
-            </div>
-            
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
-              Stop Studying. <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[#b873ff]">
-                Start Leveling Up.
-              </span>
-            </h1>
-            <p className="text-[var(--color-textGrey)] text-lg md:text-xl mb-10 max-w-2xl mx-auto lg:mx-0">
-              Traditional learning is broken and boring. Gamify turns your preparation into a progression-based adventure. Conquer gates, master skill trees, and defeat the final exam boss.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <button 
-                onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
-                className="w-full sm:w-auto px-8 py-4 rounded-xl bg-[var(--color-primary)] hover:bg-[#9d44f0] shadow-[var(--shadow-neon)] hover:shadow-[var(--shadow-neon-strong)] transition-all flex items-center justify-center gap-2 font-bold text-lg"
-              >
-                Join the Waitlist <ArrowRight className="w-5 h-5" />
-              </button>
-            </div>
-          </div>
+      {/* Centered Hero Section */}
+      <section className="pt-48 pb-20 px-6 max-w-5xl mx-auto text-center flex flex-col items-center">
+        
+        {/* Top Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-gray-300 mb-8 backdrop-blur-sm">
+          <Sparkles className="w-4 h-4 text-[var(--color-primary)]" />
+          The Future of Certification Prep
+        </div>
+        
+        {/* Massive Typography */}
+        <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium tracking-tighter mb-8 leading-[1.1]">
+          Stop studying. <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40">
+            Start leveling up.
+          </span>
+        </h1>
+        
+        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mb-10 font-light leading-relaxed">
+          Traditional learning is broken and boring. Gamify turns your preparation into a progression-based adventure. Conquer gates, master skill trees, and defeat the final exam boss.
+        </p>
+        
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+          <button 
+            onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
+            className="w-full sm:w-auto px-8 py-4 rounded-full bg-[var(--color-primary)] hover:bg-[#9d44f0] shadow-[var(--shadow-neon)] transition-all flex items-center justify-center gap-2 font-semibold text-lg"
+          >
+            Join the Waitlist <ArrowRight className="w-5 h-5" />
+          </button>
+          <button className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all font-semibold text-lg">
+            Explore Mechanics
+          </button>
+        </div>
 
-          {/* Right Image Content - STANDARD HTML IMG TAG */}
-          <div className="flex-1 w-full">
-            <div className="relative rounded-2xl overflow-hidden border border-[var(--color-borderDark)] shadow-[var(--shadow-neon-strong)] aspect-video lg:aspect-square object-cover">
-              <img 
-                src="/hero-bg.jpg" 
-                alt="Gamified Learning Interface" 
-                className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-[var(--color-background)]/80 via-transparent to-[var(--color-primary)]/20 pointer-events-none"></div>
-            </div>
+        {/* Floating Hero Image (Bento Style Wrapper) */}
+        <div className="mt-24 w-full relative rounded-[2rem] p-2 bg-gradient-to-b from-white/10 to-transparent border border-white/10 shadow-2xl backdrop-blur-sm">
+          <div className="rounded-[1.5rem] overflow-hidden bg-black relative aspect-video shadow-inner">
+            <img 
+              src="/hero-bg.jpg" 
+              alt="Gamified Learning Interface" 
+              className="w-full h-full object-cover opacity-80"
+            />
+            {/* Inner glow overlay */}
+            <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[1.5rem]"></div>
           </div>
-
         </div>
       </section>
 
-      {/* Mechanics Grid */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
+      {/* Mechanics Grid (Bento Box Style) */}
+      <section className="py-32 px-6 max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-black mb-4">How the Game is Played</h2>
-          <p className="text-[var(--color-textGrey)] text-lg">A fully data-driven learning ecosystem designed to keep you addicted to progress.</p>
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tight mb-4">How the Game is Played</h2>
+          <p className="text-gray-400 text-lg font-light">A fully data-driven learning ecosystem designed to keep you addicted to progress.</p>
         </div>
 
+        {/* Framer-style Bento Grid */}
         <div className="grid md:grid-cols-3 gap-6">
           <FeatureCard 
-            icon={<Target className="w-8 h-8 text-[var(--color-primary)]" />}
+            icon={<Target className="w-6 h-6 text-white" />}
             title="Levels & Gates"
             description="Chapters become Levels. Assessment questions become Gates. You cannot advance until you prove your mastery."
           />
           <FeatureCard 
-            icon={<TrendingUp className="w-8 h-8 text-[var(--color-primary)]" />}
+            icon={<TrendingUp className="w-6 h-6 text-white" />}
             title="Dynamic Skill Tree"
             description="Track your mastery across distinct ACS areas. Unlock nodes as you progress and visually see your knowledge grow."
           />
           <FeatureCard 
-            icon={<ShieldCheck className="w-8 h-8 text-[var(--color-primary)]" />}
+            icon={<ShieldCheck className="w-6 h-6 text-white" />}
             title="The Final Boss"
             description="A timed, high-stakes mock exam with pass/fail logic. Defeat the final boss to earn your certification readiness."
           />
         </div>
       </section>
 
-      {/* Waitlist Section */}
-      <section id="waitlist" className="py-24 px-6 border-t border-[var(--color-borderDark)] bg-[var(--color-surface)]/30 mt-12 rounded-3xl max-w-5xl mx-auto shadow-xl">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-4xl font-black mb-4">Ready to enter the arena?</h2>
-          <p className="text-[var(--color-textGrey)] mb-10 text-lg">Drop your email below to secure your spot and get early access when we launch.</p>
+      {/* Waitlist Section (Centered, sleek) */}
+      <section id="waitlist" className="py-32 px-6">
+        <div className="max-w-3xl mx-auto text-center p-12 rounded-[2.5rem] bg-gradient-to-b from-white/5 to-transparent border border-white/10 shadow-2xl relative overflow-hidden">
+          
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-[var(--color-primary)] to-transparent opacity-50" />
+          
+          <h2 className="text-4xl font-medium tracking-tight mb-4 relative z-10">Ready to enter the arena?</h2>
+          <p className="text-gray-400 mb-10 text-lg font-light relative z-10">Drop your email below to secure your spot and get early access when we launch.</p>
           
           {isSubmitted ? (
-            <div className="flex flex-col items-center justify-center p-8 border border-[var(--color-primary)]/50 bg-[var(--color-primary)]/10 rounded-2xl">
+            <div className="flex flex-col items-center justify-center p-8 bg-white/5 border border-white/10 rounded-3xl relative z-10">
               <CheckCircle2 className="w-12 h-12 text-[var(--color-primary)] mb-4" />
-              <h3 className="text-2xl font-bold mb-2">You're on the list!</h3>
-              <p className="text-[var(--color-textGrey)]">Keep an eye on your inbox. We will notify you when the gates open.</p>
+              <h3 className="text-2xl font-bold tracking-tight mb-2">You're on the list!</h3>
+              <p className="text-gray-400">Keep an eye on your inbox. We will notify you when the gates open.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto relative z-10">
               <input 
                 type="email" 
                 required
                 placeholder="Enter your email address" 
-                className="flex-1 bg-[var(--color-background)] border border-[var(--color-borderDark)] rounded-xl px-4 py-4 focus:outline-none focus:border-[var(--color-primary)] transition-colors text-white placeholder:text-[var(--color-textGrey)] shadow-inner"
+                className="flex-1 bg-black/50 border border-white/10 rounded-full px-6 py-4 focus:outline-none focus:border-[var(--color-primary)] transition-colors text-white placeholder:text-gray-500 backdrop-blur-md"
               />
               <button 
                 type="submit"
-                className="px-8 py-4 rounded-xl bg-[var(--color-primary)] hover:bg-[#9d44f0] font-bold transition-all shadow-[var(--shadow-neon)] hover:shadow-[var(--shadow-neon-strong)] active:scale-95"
+                className="px-8 py-4 rounded-full bg-white text-black hover:bg-gray-200 font-semibold transition-all shadow-[var(--shadow-neon)] active:scale-95"
               >
                 Get Access
               </button>
@@ -133,15 +149,18 @@ export default function LandingPage() {
   );
 }
 
-// Reusable card component (No Framer Motion)
+// Framer-style sleek card component
 function FeatureCard({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) {
   return (
-    <div className="bg-[var(--color-surface)] border border-[var(--color-borderDark)] p-8 rounded-2xl hover:border-[var(--color-primary)]/50 transition-all group shadow-sm hover:shadow-[var(--shadow-neon)]">
-      <div className="w-14 h-14 rounded-xl bg-[var(--color-background)] border border-[var(--color-borderDark)] flex items-center justify-center mb-6 group-hover:shadow-[var(--shadow-neon)] transition-shadow">
+    <div className="group relative bg-gradient-to-b from-white/5 to-transparent border border-white/10 p-8 rounded-[2rem] hover:bg-white/[0.07] transition-all duration-300">
+      {/* Subtle top border glow on hover */}
+      <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-[var(--color-primary)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      <div className="w-12 h-12 rounded-2xl bg-gradient-to-b from-[var(--color-primary)] to-[#5D3FD3] flex items-center justify-center mb-6 shadow-lg shadow-[var(--color-primary)]/20 border border-white/20">
         {icon}
       </div>
-      <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-[var(--color-textGrey)] leading-relaxed">{description}</p>
+      <h3 className="text-2xl font-medium tracking-tight mb-3 text-white">{title}</h3>
+      <p className="text-gray-400 font-light leading-relaxed">{description}</p>
     </div>
   );
 }
