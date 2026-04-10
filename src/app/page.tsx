@@ -82,7 +82,7 @@ export default function LandingPage() {
         <div className="mt-20 w-full max-w-4xl relative rounded-[24px] bg-[#FAFAFA] border border-gray-200 p-2 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
           <div className="rounded-[16px] overflow-hidden bg-gray-100 aspect-video md:aspect-[16/10] relative border border-gray-200/50">
             <img 
-              src="/app7.png" 
+              src="/app8.png" 
               alt="2 Fly Drones Interface" 
               className="w-full h-full object-cover object-top"
             />
