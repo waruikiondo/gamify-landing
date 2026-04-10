@@ -17,8 +17,8 @@ export default function LandingPage() {
   };
 
   const faqs = [
-    { q: "What platforms are compatible with Gamify?", a: "Gamify makes handling your certification prep a breeze. It is fully responsive and works perfectly on iOS, Android, and all modern desktop browsers." },
-    { q: "Who is Gamify best suited for?", a: "Gamify is built for students, professionals, and anyone preparing for rigorous certification exams (like the ACS) who are tired of boring, traditional study methods." },
+    { q: "What platforms are compatible with 2 Fly Drones?", a: "2 Fly Drones makes handling your certification prep a breeze. It is fully responsive and works perfectly on iOS, Android, and all modern desktop browsers." },
+    { q: "Who is 2 Fly Drones best suited for?", a: "2 Fly Drones is built for students, professionals, and anyone preparing for rigorous certification exams who are tired of boring, traditional study methods." },
     { q: "Is there a free trial available?", a: "Absolutely! We offer a full 14-day free trial so you can experience the first few Levels and Gates before committing to a premium plan." },
     { q: "How does the Final Boss exam work?", a: "The Final Boss is a timed, high-stakes mock exam with strict pass/fail logic. You must master the skill trees before you are allowed to face it." }
   ];
@@ -34,7 +34,7 @@ export default function LandingPage() {
         <nav className="w-full max-w-5xl bg-white/80 backdrop-blur-md border border-gray-200 rounded-full px-2 py-2 flex items-center justify-between shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)]">
           <div className="flex items-center gap-2 pl-4">
             <Gamepad2 className="text-[#7F56D9] w-6 h-6" />
-            <span className="text-lg font-bold tracking-tight text-[#1B1B1B]">Gamify.</span>
+            <span className="text-lg font-bold tracking-tight text-[#1B1B1B]">2 Fly Drones</span>
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-[15px] font-medium text-[#525252] hover:text-[#7F56D9] transition-colors">Features</a>
@@ -63,7 +63,7 @@ export default function LandingPage() {
         </h1>
         
         <p className="text-lg md:text-xl text-[#525252] max-w-2xl mb-10 font-normal leading-relaxed">
-          Make preparing for your certifications a breeze with our gamified platform. Conquer gates, master skill trees, and defeat the final exam boss.
+          Make preparing for your certifications a breeze with 2 Fly Drones. Conquer gates, master skill trees, and defeat the final exam boss.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
@@ -78,12 +78,12 @@ export default function LandingPage() {
           </button>
         </div>
 
-        {/* Hero Image (APP 1) */}
+        {/* Hero Image (APP 7) */}
         <div className="mt-20 w-full max-w-4xl relative rounded-[24px] bg-[#FAFAFA] border border-gray-200 p-2 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)]">
           <div className="rounded-[16px] overflow-hidden bg-gray-100 aspect-video md:aspect-[16/10] relative border border-gray-200/50">
             <img 
-              src="/app1.png" 
-              alt="Gamify Dashboard" 
+              src="/app7.png" 
+              alt="2 Fly Drones Interface" 
               className="w-full h-full object-cover object-top"
             />
           </div>
@@ -112,7 +112,7 @@ export default function LandingPage() {
               <Target className="w-6 h-6" />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-[#1B1B1B]">Hey, take a look at our core mechanics!</h2>
-            <p className="text-[#525252] text-lg max-w-2xl mx-auto">Explore how Gamify simplifies learning with innovative progression tools designed for success.</p>
+            <p className="text-[#525252] text-lg max-w-2xl mx-auto">Explore how 2 Fly Drones simplifies learning with innovative progression tools designed for success.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -168,7 +168,7 @@ export default function LandingPage() {
       <section className="py-32 px-6 bg-[#FAFAFA] border-t border-gray-200">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-[#1B1B1B]">Tap into the awesome power of Gamify!</h2>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-[#1B1B1B]">Tap into the awesome power of 2 Fly Drones!</h2>
             <p className="text-[#525252] text-lg max-w-2xl mx-auto">Managing your learning has never been easier. We streamline your journey by offering intuitive features.</p>
           </div>
 
@@ -177,7 +177,7 @@ export default function LandingPage() {
             <div className="flex-1 w-full bg-white rounded-[32px] border border-gray-200 shadow-lg p-3 aspect-[4/5] relative overflow-hidden">
                <img 
                   src="/app5.png" 
-                  alt="Gamify App Screens" 
+                  alt="App Screens" 
                   className="w-full h-full object-cover object-top rounded-[24px] border border-gray-100"
                 />
             </div>
@@ -308,11 +308,10 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Bottom CTA / Waitlist Section (APP 6 & APP 7) */}
+      {/* Bottom CTA / Waitlist Section (APP 6 & APP 1) */}
       <section id="waitlist" className="py-20 px-6 bg-white overflow-hidden relative">
         <div className="max-w-6xl mx-auto bg-[#7F56D9] rounded-[32px] p-12 md:p-24 text-center relative shadow-2xl shadow-[#7F56D9]/20 flex flex-col items-center">
           
-          {/* Decorative glowing circles inside CTA */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-black opacity-10 blur-3xl rounded-full -translate-x-1/2 translate-y-1/2"></div>
 
@@ -321,9 +320,9 @@ export default function LandingPage() {
              <img src="/app6.png" alt="App Screen" className="w-full h-auto object-cover opacity-90" />
           </div>
 
-          {/* APP 7 - Right Floating Mockup */}
+          {/* APP 1 - Right Floating Mockup */}
           <div className="hidden lg:block absolute -right-12 top-10 w-64 transform rotate-[5deg] shadow-2xl rounded-2xl overflow-hidden border-4 border-[#6c48bd]">
-             <img src="/app7.png" alt="App Screen" className="w-full h-auto object-cover opacity-90" />
+             <img src="/app1.png" alt="App Screen" className="w-full h-auto object-cover opacity-90" />
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-white relative z-10 max-w-xl">
@@ -379,14 +378,14 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white pt-20 pb-10 px-6">
+      <footer className="bg-white pt-20 pb-10 px-6 border-t border-gray-200">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-16">
             
             <div className="md:col-span-1">
               <div className="flex items-center gap-2 mb-6">
                 <Gamepad2 className="text-[#7F56D9] w-7 h-7" />
-                <span className="text-2xl font-bold tracking-tight text-[#1B1B1B]">Gamify.</span>
+                <span className="text-2xl font-bold tracking-tight text-[#1B1B1B]">2 Fly Drones</span>
               </div>
               <p className="text-[#525252] leading-relaxed mb-6">
                 We're here to assist you! Whether you have a question or need guidance on passing your exams.
@@ -424,7 +423,7 @@ export default function LandingPage() {
 
           <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-[#848484] text-sm font-medium">
-              © 2026 Powered by Gamify. All rights reserved.
+              © 2026 Powered by 2 Fly Drones. All rights reserved.
             </p>
           </div>
         </div>
